@@ -13,8 +13,9 @@ python -m uvicorn app.main:app --reload
 
 The API listens on `http://127.0.0.1:8000`.
 
-- `POST /tickets` creates a ticket.
-- `GET /tickets` lists tickets.
+- `POST /tickets` creates a ticket. Status is `open`, `in_progress`, or `closed`. Priority is `low`, `medium`, or `high`.
+- `GET /tickets` lists tickets. Optional `status` and `priority` parameters narrow the list.
+- `POST /tickets/{id}/close` marks a ticket closed.
 
 ## Tests
 
